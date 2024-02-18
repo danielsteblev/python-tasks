@@ -11,12 +11,20 @@ def createNewList(list1, list2):
     return result_list
 
 
+arg1 = []
+arg2 = []
+
 #Чтение из файла
-input_f = open('input-files/input_task1.txt', 'r')
-lines = input_f.readlines()
-arg1 = [int(num) for num in lines[0].split(',')]
-arg2 = [int(num) for num in lines[1].split(',')]
-input_f.close()
+try:
+    input_f = open('input-files/input_task1.txt', 'r')
+    lines = input_f.readlines()
+    arg1 = [int(num) for num in lines[0].split(',')]
+    arg2 = [int(num) for num in lines[1].split(',')]
+    input_f.close()
+except FileNotFoundError as err:
+    print("Файл не найден или не может быть прочитан!")
+    print(err)
+
 
 #Запись в файл
 output_f = open('output-files/output_task1.txt', 'w')
