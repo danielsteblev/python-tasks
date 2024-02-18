@@ -7,6 +7,7 @@ def createNewList(list1, list2):
         if el % 2 == 1 and list1.count(el) == 0:
             result_list.append(el)
 
+    result_list.sort()
     return result_list
 
 
