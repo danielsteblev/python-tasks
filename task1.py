@@ -1,4 +1,4 @@
-def createNewList(list1, list2):
+def create_list(list1, list2):
     result_list = []
     for el in list1:  # check 1st list
         if el % 2 == 0 and list2.count(el) == 0:
@@ -8,6 +8,7 @@ def createNewList(list1, list2):
             result_list.append(el)
 
     result_list.sort()  # sort result_list
+
     return result_list
 
 
@@ -27,7 +28,7 @@ except FileNotFoundError as err:  # throw exception if file not found
 
 
 output_f = open('output-files/output_task1.txt', 'w')  # write result_list to file
-output_f.write(str(createNewList(arg1, arg2)))
+output_f.write(str(create_list(arg1, arg2)))
 output_f.close()
 
 
