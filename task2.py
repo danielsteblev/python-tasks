@@ -14,7 +14,6 @@ def overlay_arrays(arr1, arr2):
                     break
             if match:
                 return (i, j)
-
     return None
 
 arr1 = []
@@ -30,9 +29,8 @@ try:  # read lists from file
             current.append([])
             for x in line.split(','):
                 (current[len(current)-1]).append(int(x))
-    print(arr1)
-    print(arr2)
     input_f.close()
+
 except FileNotFoundError as err:  # throw exception if file not found
     print("File not found or it cannot be read!")
     print(err)
