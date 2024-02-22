@@ -1,5 +1,5 @@
 def max_sum_of_segments(segments):
-    segments.sort(key=lambda x: x[1])  # сортируем отрезки по правому концу
+    segments.sort(key=lambda x: (x[1], x[1] - x[0]), reverse=True)
     total_sum = 0
     selected_segments = []
 
@@ -8,8 +8,8 @@ def max_sum_of_segments(segments):
             return total_sum, selected_segments
 
         # если список - пустой
-        # или левая координата текущего отрезка больше чем конец последнего выбранного
-        if not selected_segments or segments[i][0] > selected_segments[-1][1]:
+        # или правая координата текущего отрезка меньше чем левая координата последнего выбранного
+        if not selected_segments or segments[i][1] < selected_segments[-1][0]:
             total_sum += segments[i][1] - segments[i][0]  # находим длину отрезка: правая - левая координата
             selected_segments.append(segments[i])
 
