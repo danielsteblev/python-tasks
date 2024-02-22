@@ -5,7 +5,7 @@ import unittest
 class TestSearchMaxSumOfSegments(unittest.TestCase):
 
     def test_reverse_area(self):
-        test1 = [(6,7),(4,5),(2,3)]
+        test1 = [(6, 7), (4, 5), (2, 3)]
         test2 = [(2, 6), (10, 14), (5, 9), (7, 12), (1, 3), (13, 20)]
         test3 = [(1, 100), (200, 300)]
         test4 = [(2, 99)]
@@ -21,6 +21,3 @@ class TestSearchMaxSumOfSegments(unittest.TestCase):
         self.assertEqual(sum3, 199)
         self.assertEqual(sum4, 97)
         self.assertEqual(sum5, 18)
-
-
-
